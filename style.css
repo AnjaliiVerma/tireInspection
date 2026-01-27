@@ -1,0 +1,318 @@
+body {
+  background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+  /* color: #f2f2f2; 
+  #fb2c36 #ef23369e*/
+}
+
+.header {
+  background: #dc3545;
+  color: white;
+}
+
+.logo-box {
+  background: white;
+  color: #fb2c36;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 22px;
+}
+
+.tabs {
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+
+.tab-btn {
+  border: none;
+  background: none;
+  padding: 20px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #6c757d;
+  border-bottom: 4px solid transparent;
+}
+
+.tab-btn.active {
+  color: #fb2c36;
+  border-bottom-color: #dc3545;
+}
+
+.search-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: none;
+  position: relative;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.search-box i {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+}
+
+.search-box input {
+  padding-left: 40px;
+  height: 55px;
+}
+
+.inspection-card {
+  background: white;
+  border-left: 5px solid #fb2c36;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.empty-tab {
+  background: white;
+  text-align: center;
+  padding: 80px;
+  border-radius: 12px;
+}
+
+.empty-tab i {
+  font-size: 70px;
+  color: #ccc;
+}
+
+.modal-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* .btn-cancel{
+    background-color: #f2f2f2;
+    color: black;
+} */
+/* .form-select:focus,
+.form-select:focus{
+    border-color: none ;
+    outline: none !important;
+    box-shadow: none !important;
+} */
+.form-control:focus{
+    border-color: #ced4da;
+    outline: none;
+    box-shadow: none;
+}
+.bg-warning{
+padding: 10px;
+}
+.bg-primary{
+    padding: 10px;
+}
+
+.floating-select {
+  position: relative;
+}
+
+.floating-select select {
+  height: 52px;
+  padding-top: 22px;
+}
+
+.lable-con {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: 400;
+  color: #777;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+/* Move label up but stay inside */
+.floating-select select:focus + .lable-con,
+.floating-select.has-value .lable-con {
+  top: 8px;
+  font-weight: 300;
+  font-size: 12px;
+  color: #464545;
+}
+.floating-select{
+    position: relative;
+    border: 1px solid #5a5a5a;
+    border-radius: 8px;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.floating-select select{
+    outline: none;
+    box-shadow: none;   
+    border-color: none;
+}
+.form-select:focus {
+  border-color: #ced4da;  
+  box-shadow: none;       
+  outline: none;
+}
+/* aprove reject button*/
+/* .py-3{
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+b, strong {
+    font-weight: bolder;
+    font-size: large;
+    color: black;
+}
+.btn-reject{
+    background-color: #e7293aa3 ;
+    --bs-btn-hover-bg: #e13949d6;
+}
+
+.btn-approve{
+    background-color: #3ed18dc4;
+    --bs-btn-hover-bg: #26a369d9;
+} */
+
+
+/* COMMON BUTTON EFFECT (same as Upgrade button) */
+.btn-approve,
+.btn-reject,
+.btn-cancel {
+  border-radius: 14px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* HOVER LIFT EFFECT */
+.btn-approve:hover,
+.btn-reject:hover,
+.btn-cancel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ACTIVE CLICK */
+.btn-approve:active,
+.btn-reject:active,
+.btn-cancel:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* APPROVE BUTTON */
+.btn-approve {
+  background: linear-gradient(135deg, #26a369,#28a745);
+  color: #fff;
+}
+
+.btn-approve:hover {
+  background: linear-gradient(135deg, #259c65, #28a745);
+  color: #fff;
+}
+
+/* REJECT BUTTON */
+.btn-reject {
+  background: linear-gradient(135deg, #dc3545, #f54b5c);
+  color: #fff;
+}
+
+.btn-reject:hover {
+  background: linear-gradient(135deg, #dc3545, #f54b5c);
+  color: #fff;
+}
+
+/* CANCEL BUTTON */
+.btn-cancel {
+  background: linear-gradient(135deg, #f7f7f7, #e2e2e2);
+  color: #000;
+}
+
+.btn-cancel:hover {
+  background: linear-gradient(135deg, #ffffff, #d6d6d6);
+}
+
+/* TEXT */
+b, strong {
+  font-size: 1.1rem;
+}
+
+/* KEEP YOUR BIG HEIGHT */
+.py-3 {
+  padding-top: 1.2rem !important;
+  padding-bottom: 1.2rem !important;
+}
+
+/* ICON BOX (same as Upgrade) */
+.icon-box {
+  background: rgba(255, 255, 255, 0.35);
+  padding: 8px 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* COMMON BUTTON EFFECT */
+.btn-approve,
+.btn-reject,
+.btn-cancel {
+  border-radius: 14px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
+}
+
+/* HOVER */
+.btn-approve:hover,
+.btn-reject:hover,
+.btn-cancel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* APPROVE */
+.btn-approve {
+  background: linear-gradient(135deg, #28a745, #26a369,#28a745);
+  color: #fff;
+}
+
+/* REJECT */
+.btn-reject {
+  background: linear-gradient(135deg,#dc3545, #f54f5f,#dc3545);
+  color: #fff;
+}
+
+/* CANCEL */
+.btn-cancel {
+  background: linear-gradient(135deg, #f7f7f7, #e2e2e2);
+  color: #615e5e;
+}
+/* BIG ACTION BUTTONS (Approve / Reject) */
+.btn-lg-action {
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  font-size: 1.2rem;
+}
+
+/* SMALL CANCEL BUTTON */
+.btn-sm-action {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  font-size: 1rem;
+}
+
+/* ICON SIZE MATCH */
+.btn-lg-action .icon-box {
+  padding: 10px 14px;
+}
+
+.btn-sm-action .icon-box {
+  padding: 6px 10px;
+}
+
+
+

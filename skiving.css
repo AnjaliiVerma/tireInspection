@@ -1,0 +1,33 @@
+.my-5{
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+.inspection-box {
+  border: 2px solid #fb2c36;
+  background: linear-gradient(#fff3e6, #fb2c36);
+  padding: 5px;
+}
+
+.inspection-header {
+  background: #fb2c36;
+  color: white;
+  font-weight: 700;
+  padding: 8px;
+  border: 2px solid #fb2c36;
+}
+
+.counter {
+  width: 60px;
+  margin: auto;
+}
+
+.save-btn {
+  background: #b9f7b9;
+  border: 1px solid #6fdc6f;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.save-btn:hover {
+  background: #a6f0a6;
+}

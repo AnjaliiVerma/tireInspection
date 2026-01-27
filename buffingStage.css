@@ -1,0 +1,178 @@
+.prebuffer-modal {
+  background: #fff;
+  border-radius: 6px;
+}
+
+.prebuffer-header {
+  background: #dc3545;
+  color: #fff;
+  padding: 18px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.prebuffer-top {
+  background: #ffffff;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prebuffer-top div label {
+  font-size: 12px;
+  display: block;
+}
+
+.prebuffer-top div span {
+  background: #888;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.box {
+  background: #fdf2e6;
+  padding: 15px;
+  border: 2px solid #dc3545;
+  height: 100%;
+}
+
+.card-orange .box-title {
+  background: #dc3545;
+  color: #fff;
+  padding: 5px;
+  margin: -15px -15px 10px;
+  font-weight: bold;
+}
+
+.danger {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.record-box ul {
+  padding-left: 15px;
+}
+
+.record-box li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+.prebuffer-top label {
+  font-size: 13px;
+  color: #6c757d;
+}
+.box {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+/* Pre & Post Buffing Tabs */
+/* Active tab only */
+.nav-pills .nav-link.active {
+  background-color: #dc3545 !important;
+  color: #fff !important;
+}
+
+/* Optional: remove hover effect on inactive tabs */
+.nav-pills .nav-link:hover {
+  background-color: transparent;
+  color: inherit;
+}
+
+body {
+  background: #f8f9fa;
+}
+
+/* PANEL BOX */
+.panel-box {
+  border: 2px solid #dc3545;
+  background: #fff3e6;
+  border-radius: 4px;
+}
+
+/* HEADER */
+.panel-header {
+  background: #dc3545;
+  color: #fff;
+  font-weight: 700;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* BODY */
+.panel-body {
+  padding: 12px;
+}
+
+/* VALUE BOX */
+.value-box {
+  background: #f8f9fa;
+  border: 1px solid #aaa;
+  padding: 4px 12px;
+  font-weight: 700;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* RECORD */
+.record-box {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 10px;
+}
+
+.record-header {
+  font-size: 13px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.record-item {
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+
+/* TEXT */
+.small-text {
+  font-size: 20px;
+}
+
+/* SUGGEST */
+.suggest {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* APPROVE BUTTON */
+.btn-approve {
+  background: #28a745;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 18px;
+}
+
+.btn-approve:hover {
+  background: #218838;
+  color: #fff;
+}
+
+/* HOLD BUTTON */
+.btn-hold {
+  background: #fff3cd;
+  color: #000;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 18px;
+  border: 1px solid #e0c97f;
+}
+
+.btn-hold:hover {
+  background: #ffe69c;
+}
+

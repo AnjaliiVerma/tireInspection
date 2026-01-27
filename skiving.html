@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tyre Inspection Dashboard</title>
+    <!-- Bootstrap 5.3 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!--Font Awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="skiving.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div class="header">
+      <div
+        class="container-fluid px-5 py-4 d-flex justify-content-between align-items-center"
+      >
+        <div class="d-flex align-items-center gap-3">
+          <div class="logo-box">
+            <i class="bi bi-arrow-repeat"></i>
+          </div>
+          <div>
+            <h3 class="mb-0">Tyre Retreading</h3>
+            <small>Skiving Stage</small>
+          </div>
+        </div>
+
+        <div class="d-flex gap-4">
+          <div><i class="bi bi-person"></i> John Doe</div>
+          <div><i class="bi bi-calendar"></i> <span id="today"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <div class="container-fluid px-5">
+        <a class="btn tab-btn" href="index.html" onclick="switchTab('visual')">
+          <i class="bi bi-eye-fill"></i> Visual Inspection
+        </a>
+        <a
+          class="btn tab-btn"
+          href="nailInspection.html"
+          onclick="switchTab('nail')"
+        >
+          <i class="bi bi-clipboard-check-fill"></i> Nail Inspection
+        </a>
+        <a
+          class="btn tab-btn"
+          href="qualityControl.html"
+          onclick="switchTab('qc')"
+        >
+          <i class="bi bi-check-circle-fill"></i> Quality Control
+        </a>
+        <a
+          class="btn tab-btn"
+          href="shearography.html"
+          onclick="switchTab('qc')"
+        >
+          <i class="fa-solid fa-wave-square"></i>Shearography
+        </a>
+        <a
+          class="btn tab-btn"
+          href="buffingStage.html"
+          onclick="switchTab('qc')"
+        >
+          <i class="fa-solid fa-brush"></i> Buffing Stage
+        </a>
+        <a
+          class="btn tab-btn"
+          href="buffingStage.html"
+          onclick="switchTab('qc')"
+        >
+          <i class="fa-solid fa-building"></i> Building Stage
+        </a>
+        <a
+          class="btn tab-btn active"
+          href="skiving.html"
+          onclick="switchTab('qc')"
+        >
+          <i class="fa-solid fa-scissors"></i>
+          Skiving Stage
+        </a>
+        <a class="btn tab-btn" href="repair.html" onclick="switchTab('qc')">
+          <i class="bi bi-patch-check-fill"></i> Repairs Stage
+        </a>
+        <a class="btn tab-btn" href="" onclick="switchTab('qc')">
+          <i class="bi bi-stack"></i> Enveloping Stage
+        </a>
+        <a class="btn tab-btn" href="" onclick="switchTab('qc')">
+          <i class="bi bi-shield-shaded"></i> Curing Stage
+        </a>
+        <a class="btn tab-btn" href="" onclick="switchTab('qc')">
+          <i class="bi bi-arrow-up-right-square-fill"></i> Dispatch Stage
+        </a>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container-fluid px-5 py-4">
+      <!-- VISUAL TAB -->
+      <div id="visualTab">
+        <div class="search-box">
+          <i class="bi bi-search"></i>
+          <input
+            type="text"
+            class="form-control"
+            id="searchInput"
+            placeholder="Search by Casing No, Serial No, or Pattern"
+          />
+        </div>
+
+        <div id="inspectionList"></div>
+      </div>
+
+      <!-- NAIL TAB -->
+      <div id="nailTab" class="empty-tab d-none">
+        <i class="bi bi-clipboard-check"></i>
+        <p>No items pending nail inspection</p>
+      </div>
+
+      <!-- QC TAB -->
+      <div id="qcTab" class="empty-tab d-none">
+        <i class="bi bi-check-circle"></i>
+        <p>No items pending quality control</p>
+      </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="approvalModal" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h4 class="modal-title">SKIVING - Approval</h4>
+          </div>
+
+          <div class="modal-body">
+            <div class="modal-info">
+              <div>
+                <small>Production No</small>
+                <h5 id="modalCasing"></h5>
+              </div>
+              <div>
+                <small>Serial No</small>
+                <h5 id="modalSerial"></h5>
+              </div>
+              <div>
+                <small>Staff</small>
+                <h5>John Doe</h5>
+              </div>
+            </div>
+
+            <!-- <div class="floating-select mb-3" id="floatBox">
+              <select class="form-select" id="sectionWidth">
+                <option value="" selected disabled hidden></option>
+                <option value="Damaged Casing">Damaged Casing</option>
+                <option value="Incorrect Pattern">Incorrect Pattern</option>
+                <option value="Quality Issues">Quality Issues</option>
+              </select>
+              <label for="sectionWidth" class="lable-con"
+                >Rejection Reason</label
+              >
+            </div> -->
+            <div class="container my-5">
+              <div class="inspection-box mx-auto">
+                <!-- HEADER -->
+                <div class="inspection-header text-center">
+                  Inspection Stage - Patches
+                </div>
+
+                <!-- COUNTERS -->
+                <div class="row text-center mt-3">
+                  <div class="col">
+                    <label class="fw-semibold">Patches Removed</label>
+                    <input
+                      type="text"
+                      class="form-control text-center counter"
+                      value="0"
+                      readonly
+                    />
+                  </div>
+                  <div class="col">
+                    <label class="fw-semibold">Punctures Found</label>
+                    <input
+                      type="text"
+                      class="form-control text-center counter"
+                      value="0"
+                      readonly
+                    />
+                  </div>
+                </div>
+
+                <!-- FORM -->
+                <div class="mt-4">
+                  <div class="row mb-3">
+                    <div class="col-5 text-end fw-semibold">
+                      Skiving Station
+                    </div>
+                    <div class="col-7">
+                      <select class="form-select">
+                        <option selected>--- Select Station ---</option>
+                        <option>Station 1</option>
+                        <option>Station 2</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-5 text-end fw-semibold">
+                      Patches Removed
+                    </div>
+                    <div class="col-7">
+                      <select class="form-select">
+                        <option selected>--- Select Value ---</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-5 text-end fw-semibold">
+                      Punctures Found
+                    </div>
+                    <div class="col-7">
+                      <select class="form-select">
+                        <option selected>--- Select Value ---</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                    <div class="col-5 text-end fw-semibold">Remarks</div>
+                    <div class="col-7">
+                      <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                  </div>
+
+                  <!-- SAVE BUTTON -->
+                  <button class="btn save-btn w-100 py-3">
+                    <i class="bi bi-check-circle-fill me-2"></i> SAVE DATA
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="row g-3">
+              <div class="col">
+                <button
+                  class="btn btn-success w-100 py-3 btn-approve"
+                  data-bs-dismiss="modal"
+                >
+                  <b> APPROVED</b>
+                </button>
+              </div>
+              <div class="col">
+                <button
+                  class="btn btn-danger w-100 py-3 btn-reject"
+                  data-bs-dismiss="modal"
+                >
+                  <b>REJECTED</b>
+                </button>
+              </div>
+            </div> -->
+
+            <button
+              class="btn w-100 mt-3 btn-cancel btn-sm-action d-flex align-items-center justify-content-center gap-2"
+            >
+              Cancel
+              <span class="icon-box">
+                <i class="bi bi-x-circle"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="skiving.js"></script>
+    <script>
+      const select = document.getElementById("sectionWidth");
+      const box = document.getElementById("floatBox");
+
+      select.addEventListener("change", function () {
+        if (this.value) {
+          box.classList.add("has-value");
+        } else {
+          box.classList.remove("has-value");
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("searchInput");
+
+        searchInput.addEventListener("input", function () {
+          const value = this.value.toLowerCase();
+          const cards = document.querySelectorAll(".inspection-card");
+
+          cards.forEach((card) => {
+            const text = card.innerText.toLowerCase();
+
+            if (text.includes(value)) {
+              card.style.display = "";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+    <!-- Skiving approval container -->
+    <script>
+      const patchSelect = document.querySelectorAll("select")[1];
+      const punctureSelect = document.querySelectorAll("select")[2];
+      const counters = document.querySelectorAll(".counter");
+
+      patchSelect.addEventListener("change", () => {
+        counters[0].value = patchSelect.value || 0;
+      });
+
+      punctureSelect.addEventListener("change", () => {
+        counters[1].value = punctureSelect.value || 0;
+      });
+    </script>
+  </body>
+</html>

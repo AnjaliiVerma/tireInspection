@@ -1,0 +1,73 @@
+
+    body {
+      background: #f4f4f4;
+    }
+
+    .patch-container {
+      margin-bottom: 10px;
+      margin-top: 10px;
+      background: #fff;
+      border: 2px solid rgb(220 53 69);
+      border-radius: 4px;
+    }
+
+    .patch-header {
+      background: rgb(220 53 69);
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      padding: 6px;
+      font-size: 14px;
+    }
+
+    .patch-body {
+      padding: 12px;
+      border: 1px solid rgb(220 53 69);
+      border-top: none;
+    }
+
+    .patch-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .patch-row label {
+      font-weight: 600;
+    }
+
+    .patch-row input {
+      height: 22px;
+      font-size: 12px;
+      padding: 2px 6px;
+    }
+
+    .patch-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    .patch-table th {
+      background: #ffe2cc;
+      border: 1px solid rgb(220 53 69);
+      padding: 4px;
+      text-align: left;
+    }
+
+    .patch-table td {
+      border: 1px solid rgb(220 53 69);
+      padding: 4px;
+    }
+
+    .arrow {
+      width: 16px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .quali-info{
+        padding: 10px;
+    }
