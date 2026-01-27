@@ -314,5 +314,40 @@ b, strong {
   padding: 6px 10px;
 }
 
+/* SCROLLABLE TABS (ONE LINE)*/
+
+.tabs {
+  background: #f4f1ea;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabs-scroll {
+  display: flex;
+  flex-wrap: nowrap;           /* FORCE single line */
+  gap: 8px;
+  overflow-x: auto;            /* horizontal scroll */
+  overflow-y: hidden;
+  padding: 15px 0;
+  scrollbar-width: thin;
+}
+
+/* Hide ugly scrollbar (optional) */
+.tabs-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.tabs-scroll::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 10px;
+}
+
+.tab-btn {
+  white-space: nowrap;         /* Prevent wrapping */
+  flex-shrink: 0;              /* Prevent shrinking */
+  height: 36px;
+  padding: 6px 12px;
+}
+
+
 
 
