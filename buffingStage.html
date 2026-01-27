@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -107,7 +107,7 @@
         <a class="btn tab-btn" href="" onclick="switchTab('qc')">
           <i class="bi bi-shield-shaded"></i> Curing Stage
         </a>
-        <a class="btn tab-btn" href="" onclick="switchTab('qc')">
+        <a class="btn tab-btn" href="dispatch.html" onclick="switchTab('qc')">
           <i class="bi bi-arrow-up-right-square-fill"></i> Dispatch Stage
         </a>
       </div>
@@ -198,9 +198,7 @@
         <div class="modal-content prebuffer-modal">
           <!-- HEADER -->
           <div class="modal-header bg-danger text-white">
-            <h4 class="modal-title">
-              PRE BUFFING - APPROVAL
-            </h4>
+            <h4 class="modal-title">PRE BUFFING - APPROVAL</h4>
           </div>
           <div class="modal-body">
             <div class="modal-info">
@@ -348,9 +346,7 @@
         <div class="modal-content postbuff-modal">
           <!-- HEADER -->
           <div class="modal-header bg-danger text-white">
-            <h4 class="modal-title">
-              POST BUFFING - APPROVAL
-            </h4>
+            <h4 class="modal-title">POST BUFFING - APPROVAL</h4>
           </div>
 
           <!-- TOP INFO -->
@@ -358,11 +354,11 @@
             <div class="postbuff-top">
               <div>
                 <small>Production No#</small>
-                <h5 id="modalCasing"></h5>
+                <h5 id="modalCasingNo"></h5>
               </div>
               <div>
                 <small>Serial No#</small>
-                <h5 id="modalSerial"></h5>
+                <h5 id="modalSerialNo"></h5>
               </div>
               <div>
                 <small>Staff Name</small>
@@ -452,11 +448,18 @@
                 <!-- REJECTION -->
                 <div class="col-md-4">
                   <div class="box h-100">
-                    <div class="mb-3">
-                      <label class="fw-bold">Rejection Reason</label>
-                      <select class="form-select">
-                        <option>--- Select Reason ---</option>
+                    <div class="floating-select mb-3" id="floatBox">
+                      <select class="form-select" id="sectionWidth">
+                        <option value="" selected disabled hidden></option>
+                        <option value="Damaged Casing">Damaged Casing</option>
+                        <option value="Incorrect Pattern">
+                          Incorrect Pattern
+                        </option>
+                        <option value="Quality Issues">Quality Issues</option>
                       </select>
+                      <label for="sectionWidth" class="lable-con"
+                        >Rejection Reason</label
+                      >
                     </div>
 
                     <div class="col">

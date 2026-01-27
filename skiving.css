@@ -3,17 +3,16 @@
     margin-bottom: 1rem !important;
 }
 .inspection-box {
-  border: 2px solid #fb2c36;
-  background: linear-gradient(#fff3e6, #fb2c36);
-  padding: 5px;
+  border: 2px solid #dc3545;
+  background: linear-gradient(#fff3e6, #d6d6d6);
 }
 
 .inspection-header {
-  background: #fb2c36;
-  color: white;
+  background: #dc3545;
+  color: #fff;
   font-weight: 700;
   padding: 8px;
-  border: 2px solid #fb2c36;
+  border: 2px solid #dc3545;
 }
 
 .counter {
@@ -22,12 +21,14 @@
 }
 
 .save-btn {
-  background: #b9f7b9;
-  border: 1px solid #6fdc6f;
+  background: #26a369;
+  border: 1px solid #28a745;
   font-size: 20px;
   font-weight: 700;
+  color: #fff;
 }
 
 .save-btn:hover {
-  background: #a6f0a6;
+  background: #28a745;
+  color: #fff;
 }

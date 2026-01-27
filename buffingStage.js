@@ -144,10 +144,10 @@ function openModal(casing, serial) {
 
 
 function openPostBuffingModal(casing, serial) {
-  document.getElementById("modalCasing").innerText = casing;
-  document.getElementById("modalSerial").innerText = serial;
+  document.getElementById("modalCasingNo").innerText = casing;
+  document.getElementById("modalSerialNo").innerText = serial;
 
-  // OPEN POST BUFFING MODAL (not approvalModal)
+  // OPEN POST BUFFING MODAL
   new bootstrap.Modal(
     document.getElementById("postBuffingModal")
   ).show();

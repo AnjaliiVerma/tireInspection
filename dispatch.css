@@ -1,0 +1,71 @@
+/* Layout */
+.dispatch-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+/* Sidebar */
+.dispatch-sidebar {
+  width: 160px;
+}
+
+.dispatch-create-btn {
+  background: #f0ce23;
+  /* color: #fff; */
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 3px;
+  text-align: center;
+}
+.dispatch-create-btn:hover{
+  background: #f0ce23;
+}
+
+.dispatch-create-btn i {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Content */
+.dispatch-content {
+  flex: 1;
+  border: 1px solid #fb2c36;
+  padding: 5px;
+  background: #dc3545;
+  color: #fff;
+}
+
+.dispatch-title {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20px;
+ 
+}
+
+/* Table */
+.dispatch-table th {
+  background: #e2e2e2;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.dispatch-table td {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Reg No row */
+.dispatch-reg-row td {
+  
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* Highlight row */
+.dispatch-row.active-row {
+  background: #6c757d;
+  color: #fff;
+}

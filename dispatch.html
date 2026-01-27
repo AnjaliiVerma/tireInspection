@@ -26,6 +26,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dispatch.css" />
   </head>
   <body>
     <!-- HEADER -->
@@ -57,7 +58,7 @@
           <i class="bi bi-eye-fill"></i> Visual Inspection
         </a>
         <a
-          class="btn tab-btn active"
+          class="btn tab-btn"
           href="nailInspection.html"
           onclick="switchTab('nail')"
         >
@@ -86,7 +87,7 @@
         </a>
         <a
           class="btn tab-btn"
-          href="buffingStage.html"
+          href="buildingstage.html"
           onclick="switchTab('qc')"
         >
           <i class="fa-solid fa-building"></i> Building Stage
@@ -104,7 +105,11 @@
         <a class="btn tab-btn" href="" onclick="switchTab('qc')">
           <i class="bi bi-shield-shaded"></i> Curing Stage
         </a>
-        <a class="btn tab-btn" href="dispatch.html" onclick="switchTab('qc')">
+        <a
+          class="btn tab-btn active"
+          href="dispatch.html"
+          onclick="switchTab('qc')"
+        >
           <i class="bi bi-arrow-up-right-square-fill"></i> Dispatch Stage
         </a>
       </div>
@@ -112,32 +117,66 @@
 
     <!-- CONTENT -->
     <div class="container-fluid px-5 py-4">
-      <!-- VISUAL TAB -->
-      <div id="visualTab">
-        <div class="search-box">
-          <i class="bi bi-search"></i>
-          <input
-            type="text"
-            class="form-control"
-            id="searchInput"
-            placeholder="Search by Casing No, Serial No, or Pattern"
-          />
+      <div class="dispatch-wrapper">
+        <!-- LEFT ACTION -->
+        <div class="dispatch-sidebar">
+          <button class="btn dispatch-create-btn">
+            <i class="bi bi-plus-circle"></i>
+            CREATE<br />Delivery Sheet
+          </button>
         </div>
 
-        <div id="inspectionList"></div>
-      </div>
+        <!-- RIGHT TABLE -->
+        <div class="dispatch-content">
+          <h6 class="dispatch-title">DISPATCHING (DELIVERY)</h6>
 
-      <!-- NAIL TAB -->
-      <div id="nailTab" class="empty-tab d-none">
-        <i class="bi bi-clipboard-check"></i>
-        <p>No items pending nail inspection</p>
-      </div>
+          <div class="table-responsive">
+            <table class="table dispatch-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Delivery No#</th>
+                  <th>Sales Rep</th>
+                  <th>Customer</th>
+                  <th>Courier Name</th>
+                  <th>Driver</th>
+                </tr>
+              </thead>
 
-      <!-- QC TAB -->
-      <div id="qcTab" class="empty-tab d-none">
-        <i class="bi bi-check-circle"></i>
-        <p>No items pending quality control</p>
+              <tbody>
+                <tr class="dispatch-reg-row">
+                  <td colspan="6">
+                    <i class="bi bi-arrow-return-right"></i>
+                    Reg No: KCW59E
+                  </td>
+                </tr>
+
+                <tr class="dispatch-row active-row">
+                  <td>13/06/2023</td>
+                  <td>DEV-20230613-015</td>
+                  <td>Jomvu Branch</td>
+                  <td>NAZREP COMPANY</td>
+                  <td>SAVCO</td>
+                  <td>MATHEW DULO</td>
+                </tr>
+
+                <tr class="dispatch-row">
+                  <td>13/06/2023</td>
+                  <td>DEV-20230613-014</td>
+                  <td>Jomvu Branch</td>
+                  <td>ULTRA EUREKA FARM LIMITED</td>
+                  <td>SAVCO</td>
+                  <td>MATHEW DULO</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
