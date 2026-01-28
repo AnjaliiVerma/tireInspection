@@ -19,29 +19,54 @@ const inspections = [
 // Render Cards
 const list = document.getElementById("inspectionList");
 
+list.innerHTML = `
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle bg-white">
+      <thead class="table-light">
+        <tr>
+          <th>Casing No</th>
+          <th>Date</th>
+          <th>Serial</th>
+          <th>Pattern</th>
+          <th>Service</th>
+          <th class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody id="inspectionTableBody"></tbody>
+    </table>
+  </div>
+`;
+
+
+const tbody = document.getElementById("inspectionTableBody");
+
 inspections.forEach(item => {
-  list.innerHTML += `
-    <div class="inspection-card">
-      <div class="row align-items-center">
-        <div class="col"><small>Casing No</small><h5>${item.casing}</h5></div>
-        <div class="col"><small>Date</small><div>${item.date}</div></div>
-        <div class="col"><small>Serial</small><div>${item.serial}</div></div>
-        <div class="col"><small>Pattern</small><div>${item.pattern}</div></div>
-        <div class="col">
-          <span class="badge ${item.service === 'Claim' ? 'bg-warning text-dark' : 'bg-primary'}">
-            ${item.service}
-          </span>
-        </div>
-        <div class="col-auto">
-          <button class="btn btn-danger"
-            onclick="openModal('${item.casing}','${item.serial}')">
-            Inspect <i class="bi bi-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-    </div>
+  tbody.innerHTML += `
+    <tr>
+      <td><strong>${item.casing}</strong></td>
+      <td>${item.date}</td>
+      <td>${item.serial}</td>
+      <td>${item.pattern}</td>
+      <td>
+        <span class="badge ${
+          item.service === 'Claim'
+            ? 'bg-warning text-dark'
+            : 'bg-primary'
+        }">
+          ${item.service}
+        </span>
+      </td>
+      <td class="text-center">
+        <button class="btn btn-danger btn-sm"
+          onclick="openModal('${item.casing}','${item.serial}')">
+          Inspect <i class="bi bi-chevron-right"></i>
+        </button>
+      </td>
+    </tr>
   `;
 });
+
+
 const postBuffing=[
   { casing:'XT106314', date:'01/07/2025 06:56', serial:'PFK16723', pattern:'RZM530L', service:'Claim', retreadDesign:'RUZI - RZM530L', comments:'' },
   { casing:'XT106315', date:'01/07/2025 06:56', serial:'PF00708', pattern:'RZM530L', service:'Claim', retreadDesign:'RUZI - RZM530L', comments:'' },
@@ -55,29 +80,53 @@ const postBuffing=[
 // Render Cards
 const postlist = document.getElementById("postBuffingList");
 
-postBuffing.forEach(item => {
-  postlist.innerHTML += `
-    <div class="inspection-card">
-      <div class="row align-items-center">
-        <div class="col"><small>Casing No</small><h5>${item.casing}</h5></div>
-        <div class="col"><small>Date</small><div>${item.date}</div></div>
-        <div class="col"><small>Serial</small><div>${item.serial}</div></div>
-        <div class="col"><small>Pattern</small><div>${item.pattern}</div></div>
-        <div class="col"><small>Retread Design</small><div>${item.retreadDesign}</div></div>
+// build table once
+postlist.innerHTML = `
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle bg-white">
+      <thead class="table-light">
+        <tr>
+          <th>Casing No</th>
+          <th>Date</th>
+          <th>Serial</th>
+          <th>Pattern</th>
+          <th>Retread Design</th>
+          <th>Service</th>
+          <th class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody id="postBuffingTableBody"></tbody>
+    </table>
+  </div>
+`;
 
-        <div class="col">
-          <span class="badge ${item.service === 'Claim' ? 'bg-warning text-dark' : 'bg-primary'}">
-            ${item.service}
-          </span>
-        </div>
-        <div class="col-auto">
-          <button class="btn btn-danger"
-            onclick="openPostBuffingModal('${item.casing}','${item.serial}')">
-            Inspect <i class="bi bi-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-    </div>
+const tbody2 = document.getElementById("postBuffingTableBody");
+
+// render rows (same data, table format)
+postBuffing.forEach(item => {
+  tbody2.innerHTML += `
+    <tr>
+      <td><strong>${item.casing}</strong></td>
+      <td>${item.date}</td>
+      <td>${item.serial}</td>
+      <td>${item.pattern}</td>
+      <td>${item.retreadDesign || '-'}</td>
+      <td>
+        <span class="badge ${
+          item.service === 'Claim'
+            ? 'bg-warning text-dark'
+            : 'bg-primary'
+        }">
+          ${item.service}
+        </span>
+      </td>
+      <td class="text-center">
+        <button class="btn btn-danger btn-sm"
+          onclick="openPostBuffingModal('${item.casing}','${item.serial}')">
+          Inspect <i class="bi bi-chevron-right"></i>
+        </button>
+      </td>
+    </tr>
   `;
 });
 

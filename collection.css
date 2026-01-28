@@ -1,0 +1,79 @@
+body {
+  background: #f2f3f5;
+  font-size: 14px;
+}
+
+.card {
+  border-radius: 4px;
+  border: 1px solid #f8f9fa;
+}
+
+.card-header {
+  background: #dc3545;
+  font-weight: 600;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.form-label {
+  background-color: #f8f9fa;
+  margin: 0px;
+  padding: 6.5px;
+  border-radius: 2px;
+}
+
+.form-control,
+.form-select {
+  height: 34px;
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+.form-control:disabled {
+  background-color: #f8f9fa;
+}
+
+/* .table thead th {
+            background: #f5f5f5;
+            font-size: 12px;
+            white-space: nowrap;
+        } */
+.table-responsive {
+  border-radius: 12px;
+  overflow: hidden;
+}
+/* TABLE HEADER COLOR */
+table thead th {
+  background-color: #dc3545 !important; /* Bootstrap danger */
+  color: #fff !important;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-weight: 600;
+  padding: 8px !important;
+}
+
+.table tbody td {
+  font-size: 13px;
+}
+
+.btn-sm {
+  padding: 4px 10px;
+  font-size: 13px;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.footer-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.table-footer {
+  background: #f5f5f5;
+  font-size: 12px;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+}

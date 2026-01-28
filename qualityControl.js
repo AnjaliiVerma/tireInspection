@@ -27,26 +27,47 @@ const inspections = [
 // Render Cards
 const list = document.getElementById("inspectionList");
 
+/* TABLE STRUCTURE */
+list.innerHTML = `
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle bg-white">
+      <thead>
+        <tr>
+          <th>Casing No</th>
+          <th>Date</th>
+          <th>Serial</th>
+          <th>Pattern</th>
+          <th>Service</th>
+          <th>Retread Design</th>
+          <th>Comments</th>
+          <th class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody id="inspectionTableBody"></tbody>
+    </table>
+  </div>
+`;
+
+const tbody = document.getElementById("inspectionTableBody");
+
+/* TABLE ROWS */
 inspections.forEach(item => {
-  list.innerHTML += `
-    <div class="inspection-card">
-      <div class="row align-items-center">
-        <div class="col"><small>Casing No</small><h5>${item.casing}</h5></div>
-        <div class="col"><small>Date</small><div>${item.date}</div></div>
-        <div class="col"><small>Serial</small><div>${item.serial}</div></div>
-        <div class="col"><small>Pattern</small><div>${item.pattern}</div></div>
-        <div class="col"><small>Service</small><div>${item.service}</div></div>
-        <div class="col"><small>Retread Design</small><div>${item.retreadDesign}</div></div>
-        <div class="col"><small>Comments</small><div>${item.comments}</div></div>
-        
-        <div class="col-auto">
-          <button class="btn btn-danger"
-            onclick="openModal('${item.casing}','${item.serial}')">
-            Inspect <i class="bi bi-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-    </div>
+  tbody.innerHTML += `
+    <tr>
+      <td><strong>${item.casing}</strong></td>
+      <td>${item.date}</td>
+      <td>${item.serial}</td>
+      <td>${item.pattern}</td>
+      <td>${item.service}</td>
+      <td>${item.retreadDesign}</td>
+      <td>${item.comments}</td>
+      <td class="text-center">
+        <button class="btn btn-danger btn-sm"
+          onclick="openModal('${item.casing}','${item.serial}')">
+          Inspect <i class="bi bi-chevron-right"></i>
+        </button>
+      </td>
+    </tr>
   `;
 });
 
